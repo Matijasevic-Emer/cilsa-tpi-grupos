@@ -11,6 +11,7 @@ export const getGamingProducts = () => {
             marca: "HyperX",
             modelo: "Alloy FPS Pro",
             garantia: "2 años",
+            imagen: "Teclado Mecánico RGB.webp",
             peso: "900g"
         },
         {
@@ -23,7 +24,8 @@ export const getGamingProducts = () => {
             stock: 15,
             marca: "Logitech",
             modelo: "G Pro Wireless",
-            garantia: "1 año",
+            garantia: "1 años",
+            imagen: "Mouse Gaming Inalámbrico Logitech.jpg",
             peso: "80g"
         },
         {
@@ -37,6 +39,7 @@ export const getGamingProducts = () => {
             marca: "ASUS",
             modelo: "ROG Strix",
             garantia: "3 años",
+            imagen: "Monitor Gaming 27'' 144Hz.webp",
             peso: "4.5kg"
         },
         {
@@ -50,6 +53,7 @@ export const getGamingProducts = () => {
             marca: "NVIDIA",
             modelo: "GeForce RTX 3080",
             garantia: "3 años",
+            imagen: "Tarjeta Gráfica RTX 3080 NVIDIA.jpg",
             peso: "1.4kg"
         },
         {
@@ -62,7 +66,8 @@ export const getGamingProducts = () => {
             stock: 25,
             marca: "Razer",
             modelo: "Kraken",
-            garantia: "1 año",
+            garantia: "1 años",
+            imagen: "Auriculares Gaming con Micrófono Razer.jpg",
             peso: "350g"
         },
         {
@@ -76,6 +81,7 @@ export const getGamingProducts = () => {
             marca: "DXRacer",
             modelo: "Formula Series",
             garantia: "2 años",
+            imagen: "Silla Gaming Ergonómica DXRacer.webp",
             peso: "22kg"
         }
     ];
@@ -90,7 +96,7 @@ export const getProductCategories = () => {
             precioMax: 200.00,
             enTemporadaDeDescuento: true,
             productosDestacados: [
-                "Teclado Mecánico RGB",
+                "Teclado Mecánico RGB.webp",
                 "Mouse Gaming Inalámbrico",
                 "Auriculares Gaming con Micrófono"
             ],
