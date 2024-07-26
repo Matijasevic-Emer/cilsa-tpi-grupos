@@ -11,7 +11,8 @@ export const getGamingProducts = () => {
             marca: "HyperX",
             modelo: "Alloy FPS Pro",
             garantia: "2 años",
-            peso: "900g"
+            peso: "900g",
+            imagen: "https://www.hd-tecnologia.com/imagenes/articulos/2020/10/CORSAIR-presenta-un-nuevo-teclado-mecanico-para-juegos-el-CORSAIR-K60-RGB-PRO.jpg"
         },
         {
             id: 2,
@@ -24,7 +25,8 @@ export const getGamingProducts = () => {
             marca: "Logitech",
             modelo: "G Pro Wireless",
             garantia: "1 año",
-            peso: "80g"
+            peso: "80g",
+            imagen: "https://www.malditohard.com.ar/wp-content/uploads/product/8/MOU061.webp"
         },
         {
             id: 3,
@@ -37,7 +39,8 @@ export const getGamingProducts = () => {
             marca: "ASUS",
             modelo: "ROG Strix",
             garantia: "3 años",
-            peso: "4.5kg"
+            peso: "4.5kg",
+            imagen: "https://www.qloud.ar/SITES/IMG/gaming-point-06-2021/221_06-03-2023-03-03-55-2.png"
         },
         {
             id: 4,
@@ -50,7 +53,8 @@ export const getGamingProducts = () => {
             marca: "NVIDIA",
             modelo: "GeForce RTX 3080",
             garantia: "3 años",
-            peso: "1.4kg"
+            peso: "1.4kg",
+            imagen: "https://www.ozeros.com/wp-content/uploads/2020/10/MSI-GEFORCE-RTX-3080-GAMING-X-TRIO-10G-1.jpg"
         },
         {
             id: 5,
@@ -63,7 +67,8 @@ export const getGamingProducts = () => {
             marca: "Razer",
             modelo: "Kraken",
             garantia: "1 año",
-            peso: "350g"
+            peso: "350g",
+            imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5vm5t80tSqb_Bw5YdcZvEGtwi8jBYiT4P7w&s"
         },
         {
             id: 6,
@@ -76,7 +81,8 @@ export const getGamingProducts = () => {
             marca: "DXRacer",
             modelo: "Formula Series",
             garantia: "2 años",
-            peso: "22kg"
+            peso: "22kg",
+            imagen: "https://img.freepik.com/fotos-premium/silla-gaming-ergonomica-colores-vibrantes-00478-01_883586-53770.jpg?w=826"
         }
     ];
 }
