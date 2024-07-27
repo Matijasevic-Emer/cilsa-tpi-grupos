@@ -11,7 +11,9 @@ export const getGamingProducts = () => {
             marca: "HyperX",
             modelo: "Alloy FPS Pro",
             garantia: "2 años",
-            imagen: "Teclado Mecánico RGB.webp",
+            destacado: true,
+            enOferta: false,
+            imagen: "Teclado_Mecanico_RGB.webp",
             peso: "900g"
         },
         {
@@ -25,6 +27,8 @@ export const getGamingProducts = () => {
             marca: "Logitech",
             modelo: "G Pro Wireless",
             garantia: "1 años",
+            destacado: true,
+            enOferta: false,
             imagen: "Mouse Gaming Inalámbrico Logitech.jpg",
             peso: "80g"
         },
@@ -39,7 +43,9 @@ export const getGamingProducts = () => {
             marca: "ASUS",
             modelo: "ROG Strix",
             garantia: "3 años",
-            imagen: "Monitor Gaming 27'' 144Hz.webp",
+            destacado: true,
+            enOferta: true,
+            imagen: "Monitor_Gaming_27_144Hz.webp",
             peso: "4.5kg"
         },
         {
@@ -53,6 +59,8 @@ export const getGamingProducts = () => {
             marca: "NVIDIA",
             modelo: "GeForce RTX 3080",
             garantia: "3 años",
+            destacado: false,
+            enOferta: true,
             imagen: "Tarjeta Gráfica RTX 3080 NVIDIA.jpg",
             peso: "1.4kg"
         },
@@ -67,6 +75,8 @@ export const getGamingProducts = () => {
             marca: "Razer",
             modelo: "Kraken",
             garantia: "1 años",
+            destacado: false,
+            enOferta: true,
             imagen: "Auriculares Gaming con Micrófono Razer.jpg",
             peso: "350g"
         },
@@ -81,6 +91,8 @@ export const getGamingProducts = () => {
             marca: "DXRacer",
             modelo: "Formula Series",
             garantia: "2 años",
+            destacado: false,
+            enOferta: true,
             imagen: "Silla Gaming Ergonómica DXRacer.webp",
             peso: "22kg"
         }

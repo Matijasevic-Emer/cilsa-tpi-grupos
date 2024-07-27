@@ -1,85 +1,101 @@
-export const getProductCategories = () => {
-    return [
-        {
-            id: 1,
-            nombre: "Periféricos",
-            precioMin: 50.00,
-            precioMax: 200.00,
-            enTemporadaDeDescuento: true,
-            productosDestacados: [
-                { nombre: "Teclado Mecánico RGB", imgUrl: "../public/images/Teclado Mecánico RGB.webp" },
-                { nombre: "Mouse Gaming Inalámbrico", imgUrl: "../public/images/Mouse Gaming Inalámbrico Logitech.jpg" },
-                { nombre: "Auriculares Gaming con Micrófono", imgUrl: "../public/images/Auriculares Gaming con Micrófono Razer.jpg" }
-            ],
-            descripcion: "Dispositivos adicionales que mejoran la experiencia de uso de una computadora.",
-            popularidad: 4.5
-        },
-        {
-            id: 2,
-            nombre: "Monitores",
-            precioMin: 100.00,
-            precioMax: 600.00,
-            enTemporadaDeDescuento: false,
-            productosDestacados: [
-                "Monitor Gaming 27'' 144Hz",
-                "Monitor UltraWide 34''"
-            ],
-            descripcion: "Pantallas de alta definición para visualizar el contenido de la computadora.",
-            popularidad: 4.0
-        },
-        {
-            id: 3,
-            nombre: "Componentes",
-            precioMin: 30.00,
-            precioMax: 1200.00,
-            enTemporadaDeDescuento: true,
-            productosDestacados: [
-                { nombre: "Teclado Mecánico RGB", imgUrl: "../public/images/Teclado Mecánico RGB.webp" },
-                { nombre: "Mouse Gaming Inalámbrico", imgUrl: "../public/images/Teclado Mecánico RGB.webp" },
-                { nombre: "Auriculares Gaming con Micrófono", imgUrl: "../public/images/Teclado Mecánico RGB.webp" }
-            ],
-            descripcion: "Partes internas esenciales para el funcionamiento de una computadora.",
-            popularidad: 4.8
-        },
-        {
-            id: 4,
-            nombre: "Mobiliario",
-            precioMin: 100.00,
-            precioMax: 500.00,
-            enTemporadaDeDescuento: false,
-            productosDestacados: [
-                "Silla Gaming Ergonómica",
-                "Escritorio Ajustable"
-            ],
-            descripcion: "Muebles diseñados para proporcionar comodidad y soporte durante el uso de la computadora.",
-            popularidad: 4.2
-        },
-        {
-            id: 5,
-            nombre: "Almacenamiento",
-            precioMin: 20.00,
-            precioMax: 300.00,
-            enTemporadaDeDescuento: true,
-            productosDestacados: [
-                { nombre: "Teclado Mecánico RGB", imgUrl: "../public/images/Teclado Mecánico RGB.webp" },
-                { nombre: "Mouse Gaming Inalámbrico", imgUrl: "../public/images/Teclado Mecánico RGB.webp" },
-                { nombre: "Auriculares Gaming con Micrófono", imgUrl: "../public/images/Teclado Mecánico RGB.webp" }
-            ],
-            descripcion: "Dispositivos utilizados para guardar y transportar datos digitales.",
-            popularidad: 4.3
-        },
-        {
-            id: 6,
-            nombre: "Audio",
-            precioMin: 30.00,
-            precioMax: 200.00,
-            enTemporadaDeDescuento: false,
-            productosDestacados: [
-                "Altavoces Bluetooth",
-                "Auriculares Inalámbricos"
-            ],
-            descripcion: "Equipos para la reproducción y grabación de sonido.",
-            popularidad: 4.6
-        }
-    ];
+import { getGamingProducts } from './MOCK.js';
+
+const renderProductosDestacados = () => {
+    const productos = getGamingProducts();
+    const productosDestacados = productos.filter(producto => producto.destacado);
+    const contenedor = document.getElementById('productos-destacados');
+
+    productosDestacados.forEach(producto => {
+        // Crear la tarjeta
+        const card = document.createElement('div');
+        card.className = 'card m-3 col-12 col-md-12 col-lg-12';
+        card.style.width = '18rem';
+        card.style.background = '#FF0099';
+
+        // Crear el enlace
+        const link = document.createElement('a');
+        link.href = "#"; // Actualiza esto con el enlace correcto
+
+        // Crear la imagen
+        const img = document.createElement('img');
+        img.src = `/public/images/${producto.imagen}`; // Asegúrate de que la ruta sea correcta
+        img.className = 'card-img-top mt-2';
+        img.alt = producto.nombre;
+
+        // Añadir la imagen al enlace
+        link.appendChild(img);
+
+        // Crear el cuerpo de la tarjeta
+        const cardBody = document.createElement('div');
+        cardBody.className = 'card-body';
+
+        // Crear el título de la tarjeta
+        const cardTitle = document.createElement('h2');
+        cardTitle.textContent = producto.nombre;
+        cardTitle.className = 'text-white';
+
+        // Añadir el título al cuerpo de la tarjeta
+        cardBody.appendChild(cardTitle);
+
+        // Añadir el enlace y el cuerpo de la tarjeta a la tarjeta
+        card.appendChild(link);
+        card.appendChild(cardBody);
+
+        // Añadir la tarjeta al contenedor
+        contenedor.appendChild(card);
+    });
 }
+
+document.addEventListener('DOMContentLoaded', renderProductosDestacados);
+
+
+
+
+const renderProductosOfertas = () => {
+    const productos = getGamingProducts();
+    const productosOferta = productos.filter(producto => producto.enOferta);
+    const contenedor = document.getElementById('productos-ofertas');
+
+    productosOferta.forEach(producto => {
+        // Crear la tarjeta
+        const card = document.createElement('div');
+        card.className = 'card m-3 col-12 col-md-12 col-lg-12';
+        card.style.width = '18rem';
+        card.style.background = '#FF0099';
+
+        // Crear el enlace
+        const link = document.createElement('a');
+        link.href = "#"; // Actualiza esto con el enlace correcto
+
+        // Crear la imagen
+        const img = document.createElement('img');
+        img.src = `/public/images/${producto.imagen}`; // Asegúrate de que la ruta sea correcta
+        img.className = 'card-img-top mt-2';
+        img.alt = producto.nombre;
+
+        // Añadir la imagen al enlace
+        link.appendChild(img);
+
+        // Crear el cuerpo de la tarjeta
+        const cardBody = document.createElement('div');
+        cardBody.className = 'card-body';
+
+        // Crear el título de la tarjeta
+        const cardTitle = document.createElement('h2');
+        cardTitle.textContent = producto.nombre;
+        cardTitle.className = 'text-white';
+
+        // Añadir el título al cuerpo de la tarjeta
+        cardBody.appendChild(cardTitle);
+
+        // Añadir el enlace y el cuerpo de la tarjeta a la tarjeta
+        card.appendChild(link);
+        card.appendChild(cardBody);
+
+        // Añadir la tarjeta al contenedor
+        contenedor.appendChild(card);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', renderProductosOfertas);
+
