@@ -18,7 +18,8 @@ const renderProductosDestacados = () => {
 
         
         const img = document.createElement('img');
-        img.src = `/public/images/${producto.imagen}`; //ruta de la imagen
+        //img.src = `/public/images/${producto.imagen}`; //ruta de la imagen en archivo
+        img.src = producto.imagen; //ruta de la imagen en enlace
         img.className = 'card-img-top mt-2';
         img.alt = producto.nombre;
 
@@ -69,7 +70,8 @@ const renderProductosOfertas = () => {
 
         
         const img = document.createElement('img');
-        img.src = `/public/images/${producto.imagen}`; 
+        //img.src = `/public/images/${producto.imagen}`; //ruta de la imagen en archivo
+        img.src = producto.imagen; //ruta de la imagen en enlace 
         img.className = 'card-img-top mt-2';
         img.alt = producto.nombre;
 

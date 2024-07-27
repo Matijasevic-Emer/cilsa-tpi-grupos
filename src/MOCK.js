@@ -13,8 +13,9 @@ export const getGamingProducts = () => {
             garantia: "2 años",
             destacado: true,
             enOferta: false,
-            imagen: "Teclado_Mecanico_RGB.webp",
-            peso: "900g"
+            image: "Teclado_Mecanico_RGB.webp",
+            peso: "900g",
+            imagen: "https://www.hd-tecnologia.com/imagenes/articulos/2020/10/CORSAIR-presenta-un-nuevo-teclado-mecanico-para-juegos-el-CORSAIR-K60-RGB-PRO.jpg"
         },
         {
             id: 2,
@@ -26,11 +27,12 @@ export const getGamingProducts = () => {
             stock: 15,
             marca: "Logitech",
             modelo: "G Pro Wireless",
-            garantia: "1 años",
+            garantia: "1 año",
             destacado: true,
             enOferta: false,
-            imagen: "Mouse Gaming Inalámbrico Logitech.jpg",
-            peso: "80g"
+            image: "Mouse Gaming Inalámbrico Logitech.jpg",
+            peso: "80g",
+            imagen: "https://www.malditohard.com.ar/wp-content/uploads/product/8/MOU061.webp"
         },
         {
             id: 3,
@@ -45,8 +47,9 @@ export const getGamingProducts = () => {
             garantia: "3 años",
             destacado: true,
             enOferta: true,
-            imagen: "Monitor_Gaming_27_144Hz.webp",
-            peso: "4.5kg"
+            image: "Monitor_Gaming_27_144Hz.webp",
+            peso: "4.5kg",
+            imagen: "https://www.qloud.ar/SITES/IMG/gaming-point-06-2021/221_06-03-2023-03-03-55-2.png"
         },
         {
             id: 4,
@@ -61,8 +64,9 @@ export const getGamingProducts = () => {
             garantia: "3 años",
             destacado: false,
             enOferta: true,
-            imagen: "Tarjeta Gráfica RTX 3080 NVIDIA.jpg",
-            peso: "1.4kg"
+            image: "Tarjeta Gráfica RTX 3080 NVIDIA.jpg",
+            peso: "1.4kg",
+            imagen: "https://www.ozeros.com/wp-content/uploads/2020/10/MSI-GEFORCE-RTX-3080-GAMING-X-TRIO-10G-1.jpg"
         },
         {
             id: 5,
@@ -74,11 +78,12 @@ export const getGamingProducts = () => {
             stock: 25,
             marca: "Razer",
             modelo: "Kraken",
-            garantia: "1 años",
+            garantia: "1 año",
             destacado: false,
             enOferta: true,
-            imagen: "Auriculares Gaming con Micrófono Razer.jpg",
-            peso: "350g"
+            image: "Auriculares Gaming con Micrófono Razer.jpg",
+            peso: "350g",
+            imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5vm5t80tSqb_Bw5YdcZvEGtwi8jBYiT4P7w&s"
         },
         {
             id: 6,
@@ -93,11 +98,13 @@ export const getGamingProducts = () => {
             garantia: "2 años",
             destacado: false,
             enOferta: true,
-            imagen: "Silla Gaming Ergonómica DXRacer.webp",
-            peso: "22kg"
+            image: "Silla Gaming Ergonómica DXRacer.webp",
+            peso: "22kg",
+            imagen: "https://img.freepik.com/fotos-premium/silla-gaming-ergonomica-colores-vibrantes-00478-01_883586-53770.jpg?w=826"
         }
     ];
 }
+
 
 export const getProductCategories = () => {
     return [
