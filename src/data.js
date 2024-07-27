@@ -1,4 +1,4 @@
-import { getGamingProducts } from './MOCK.js';
+import { getGamingProducts } from './mock.js';
 
 const renderProductosDestacados = () => {
     const productos = getGamingProducts();

@@ -13,6 +13,59 @@
   <title>Inicio</title>
 </head>
 <body style="background-color: #212121;">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html">
+          <img
+            src="../public/images/logo.jpeg"
+            alt="logo de la empresa"
+            class="imgLogo"
+            width="80px"
+            height="80px"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navegacion" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a
+                class="anclas hvr-underline-from-center gamer nav-link"
+                aria-current="page"
+                href="./index.html"
+                >Inicio</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="anclas hvr-underline-from-center gamer nav-link"
+                href="./category.html"
+                >Categorias</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="anclas hvr-underline-from-center gamer nav-link"
+                href="./products.html"
+                >Productos</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <hr />
+  </header>
   <main>
     <section class="carrusel-index">
       <div id="carouselExampleIndicators" class="carousel slide m-3">
@@ -23,13 +76,13 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="./public/images/banner/banner-4.jpg" class="d-block w-100" alt="...">
+            <img src="/public/images/banner/banner-3.jpg" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./public/images/banner/banner-5.png" class="d-block w-100" alt="...">
+            <img src="/public/images/banner/banner-4.jpg" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./public/images/banner/banner-3.jpg" class="d-block w-100" alt="...">
+            <img src="/public/images/banner/banner-5.png" class="d-block w-100" alt="...">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -54,7 +107,7 @@
     </section>
   </main>
 </body>
-<script src="./src/data.js" type="module"></script>
+<script src="/src/data.js" type="module"></script>
 <script
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
