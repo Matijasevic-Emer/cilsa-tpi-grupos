@@ -79,7 +79,7 @@ export const getGamingProducts = () => {
             categoria: "Periféricos",
             CategoriaId:1,
             precio: 50.00,
-            descuento: 10,
+            descuento: 50,
             stock: 25,
             marca: "Razer",
             modelo: "Kraken",
