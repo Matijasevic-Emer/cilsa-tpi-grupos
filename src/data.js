@@ -14,9 +14,8 @@ const renderProductosDestacados = () => {
 
         // Crear el enlace
         const link = document.createElement('a');
-        link.href = "#"; // Actualiza esto con el enlace correcto
+        link.href = "./productdetail.html?id=" + producto.id; // Actualiza esto con el enlace correcto
 
-        
         const img = document.createElement('img');
         //img.src = `/public/images/${producto.imagen}`; //ruta de la imagen en archivo
         img.src = producto.imagen; //ruta de la imagen en enlace
