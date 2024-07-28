@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <title>Detalle del Producto</title>
+    <title>Lista de Productos</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
     <link href="./products.css" rel="stylesheet" />
     <style>
@@ -38,22 +38,25 @@
                 </div>
             </div>
         </nav>
-        <hr />
+        <hr/>
     </header>
     <div class="container mt-5">
-        <h1 class="text-center">Detalle del Producto</h1>
-        <div id="product-detail" class="row mt-4 d-flex justify-content-center">
-            <!-- Detalle del producto se cargará aquí -->
+        <h1 class="text-center">Productos de la Categoría Seleccionada</h1>
+        <div id="product-list" class="row mt-4">
+            <!-- Los Productos se cargarán aquí -->
         </div>
     </div>
     <footer class="bg-black text-center py-3 mt-5 d-flex">
         <div class="container">
             <p class="mb-1 d-flex justify-content-between">Grupo 5 TPI Grupal</p>
-            <a href="https://github.com/Matijasevic-Emer/cilsa-tpi-grupos/tree/feature/product-detail" target="_blank">
-                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="30px" height="30px"/>
+            <a href="https://github.com/Matijasevic-Emer/cilsa-tpi-grupos/tree/feature/product-detail"
+                target="_blank">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub"
+                    width="30px" height="30px" />
             </a>
             <a href="https://instagram.com" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png" alt="Instagram" width="30px" height="30px"/>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png"
+                    alt="Instagram" width="30px" height="30px" />
             </a>
         </div>
     </footer>
@@ -61,7 +64,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
-            const productId = parseInt(urlParams.get('id'));
+            const categoriaSeleccionada = urlParams.get('categoria');
 
             const products = [
                 { id: 1, nombre: "Teclado Mecánico RGB", categoria: "Periféricos", image: "https://www.hd-tecnologia.com/imagenes/articulos/2020/10/CORSAIR-presenta-un-nuevo-teclado-mecanico-para-juegos-el-CORSAIR-K60-RGB-PRO.jpg", descripcion: "Teclado mecánico con retroiluminación RGB completo, ideal para juegos." },
@@ -72,27 +75,29 @@
                 { id: 6, nombre: "Silla Gaming Ergonómica", categoria: "Mobiliario", image: "https://img.freepik.com/fotos-premium/silla-gaming-ergonomica-colores-vibrantes-00478-01_883586-53770.jpg?w=826", descripcion: "Silla ergonómica diseñada para sesiones de juegos largas." }
             ];
 
-            const productoSeleccionado = products.find(product => product.id === productId);
+            const productosFiltrados = products.filter(product => product.categoria === categoriaSeleccionada);
 
-            if (productoSeleccionado) {
-                const productDetail = document.getElementById('product-detail');
+            const productList = document.getElementById('product-list');
+            productosFiltrados.forEach(product => {
                 const productCard = document.createElement('div');
-                productCard.className = 'card h-100';
-                productCard.style.width = '18rem';
+                productCard.className = 'col-md-4 mb-4';
                 productCard.innerHTML = `
-                    <img src="${productoSeleccionado.image}" class="card-img-top" alt="${productoSeleccionado.nombre}">
-                    <div class="card-body">
-                        <h5 class="card-title">${productoSeleccionado.nombre}</h5>
-                        <p class="card-text">Categoría: ${productoSeleccionado.categoria}</p>
-                        <p class="card-text">${productoSeleccionado.descripcion}</p>
+                    <div class="card h-100">
+                        <img src="${product.image}" class="card-img-top" alt="${product.nombre}">
+                        <div class="card-body">
+                            <h5 class="card-title">${product.nombre}</h5>
+                            <p class="card-text">Categoría: ${product.categoria}</p>
+                            <p class="card-text">${product.descripcion}</p>
+                            <a href="./productdetail.html?id=${product.id}" class="btn btn-primary">Ver detalles</a>
+                        </div>
                     </div>
                 `;
-                productDetail.appendChild(productCard);
-            }
+                productList.appendChild(productCard);
+            });
         });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 </body>
 </html>
