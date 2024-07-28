@@ -65,7 +65,7 @@ const renderProductosOfertas = () => {
 
        
         const link = document.createElement('a');
-        link.href = "#"; 
+        link.href = "./productdetail.html?id=" + producto.id;
 
         
         const img = document.createElement('img');
