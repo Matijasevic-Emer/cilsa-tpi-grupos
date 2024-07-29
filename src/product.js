@@ -38,8 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <button class="btn btn-outline-secondary increment-btn" type="button">+</button>
                             </div>
                         </div>
+                        <div class="d-flex justify-content-center">
                         <button class="btn btn-primary mr-1 agregar-carrito-btn">Agregar al carrito</button>
-                    </div>
+                        </div>
+                        </div>
                 </div>
             </div>
         `;
