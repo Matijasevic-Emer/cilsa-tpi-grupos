@@ -70,12 +70,7 @@
                   class="cart"
                   alt="Carrito de compras"
                 />
-                <span
-                  class="cart-count"
-                  id="cart-count"
-                  style="border-radius: 5%"
-                  >EL CARRITO NO ESTÁ DISPONIBLE AQUÍ</span
-                >
+                <span class="cart-count" id="cart-count">0</span>
               </a>
             </div>
           </div>
@@ -190,9 +185,24 @@
                         <h5 class="card-title">${productoSeleccionado.nombre}</h5>
                         <p class="card-text">Categoría: ${productoSeleccionado.categoria}</p>
                         <p class="card-text">${productoSeleccionado.descripcion}</p>
+                        <a href="./products.html" class="d-flex justify-content-center">
+                        <button class="btn btn-primary mr-1 agregar-carrito-btn">COMPRAR</button>
+                        </a>
                     </div>
                 `;
           productDetail.appendChild(productCard);
+        }
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const cartCountElement = document.getElementById("cart-count");
+        let cartCount = parseInt(sessionStorage.getItem("cartCount")) || 0;
+        cartCountElement.textContent = cartCount;
+        if (cartCount > 0) {
+          cartCountElement.style.display = "inline";
+        } else {
+          cartCountElement.style.display = "none";
         }
       });
     </script>
