@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Categorías</title>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <title>Detalle del Producto</title>
     <link
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,13 +12,13 @@
     <link href="./products.css" rel="stylesheet" />
     <link href="./index.css" rel="stylesheet" />
   </head>
-  <body style="background-color: #212121">
+  <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="../index.html">
+          <a class="navbar-brand" href="index.html">
             <img
-              src="../public/images/logo.jpeg"
+              src="public/images/logo.jpeg"
               alt="logo de la empresa"
               class="imgLogo"
               width="80px"
@@ -41,7 +42,7 @@
                 <a
                   class="anclas hvr-underline-from-center gamer nav-link"
                   aria-current="page"
-                  href="../index.html"
+                  href="index.html"
                   >Inicio</a
                 >
               </li>
@@ -65,7 +66,7 @@
             <div class="cart-icon">
               <a href="#">
                 <img
-                  src="../public/images/carrito.png"
+                  src="public/images/carrito.png"
                   class="cart"
                   alt="Carrito de compras"
                 />
@@ -76,15 +77,12 @@
         </div>
       </nav>
     </header>
-    <main>
-      <section class="categorias-index border border-secondary m-3 text-white">
-        <h1 class="text-center mt-5 mb-5">Categorías de Productos</h1>
-        <div
-          id="categorias"
-          class="row col-12 col-md-12 col-lg-12 mt-5 d-flex justify-content-around p-5"
-        ></div>
-      </section>
-    </main>
+    <div class="container mt-5">
+      <h1 class="text-center">Detalle del Producto</h1>
+      <div id="product-detail" class="row mt-4 d-flex justify-content-center">
+        <!-- Detalle del producto se cargará aquí -->
+      </div>
+    </div>
     <footer class="bg-black text-center py-3 mt-5 d-flex">
       <div class="container">
         <p class="mb-1 d-flex justify-content-between">Grupo 5 TPI Grupal</p>
@@ -109,6 +107,93 @@
         </a>
       </div>
     </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = parseInt(urlParams.get("id"));
+
+        const products = [
+          {
+            id: 1,
+            nombre: "Teclado Mecánico RGB",
+            categoria: "Periféricos",
+            image:
+              "https://www.hd-tecnologia.com/imagenes/articulos/2020/10/CORSAIR-presenta-un-nuevo-teclado-mecanico-para-juegos-el-CORSAIR-K60-RGB-PRO.jpg",
+            descripcion:
+              "Teclado mecánico con retroiluminación RGB completo, ideal para juegos.",
+          },
+          {
+            id: 2,
+            nombre: "Mouse Gaming Inalámbrico",
+            categoria: "Periféricos",
+            image:
+              "https://www.malditohard.com.ar/wp-content/uploads/product/8/MOU061.webp",
+            descripcion:
+              "Mouse inalámbrico con alta precisión y múltiples botones programables.",
+          },
+          {
+            id: 3,
+            nombre: "Monitor Gaming 27'' 144Hz",
+            categoria: "Monitores",
+            image:
+              "https://www.qloud.ar/SITES/IMG/gaming-point-06-2021/221_06-03-2023-03-03-55-2.png",
+            descripcion:
+              "Monitor de 27 pulgadas con una alta tasa de refresco de 144Hz.",
+          },
+          {
+            id: 4,
+            nombre: "Tarjeta Gráfica RTX 3080",
+            categoria: "Componentes",
+            image:
+              "https://www.ozeros.com/wp-content/uploads/2020/10/MSI-GEFORCE-RTX-3080-GAMING-X-TRIO-10G-1.jpg",
+            descripcion:
+              "Potente tarjeta gráfica RTX 3080 para videojuegos exigentes.",
+          },
+          {
+            id: 5,
+            nombre: "Auriculares Gaming con Micrófono",
+            categoria: "Periféricos",
+            image:
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5vm5t80tSqb_Bw5YdcZvEGtwi8jBYiT4P7w&s",
+            descripcion:
+              "Auriculares gaming con sonido envolvente y micrófono incorporado.",
+          },
+          {
+            id: 6,
+            nombre: "Silla Gaming Ergonómica",
+            categoria: "Mobiliario",
+            image:
+              "https://img.freepik.com/fotos-premium/silla-gaming-ergonomica-colores-vibrantes-00478-01_883586-53770.jpg?w=826",
+            descripcion:
+              "Silla ergonómica diseñada para sesiones de juegos largas.",
+          },
+        ];
+
+        const productoSeleccionado = products.find(
+          (product) => product.id === productId
+        );
+
+        if (productoSeleccionado) {
+          const productDetail = document.getElementById("product-detail");
+          const productCard = document.createElement("div");
+          productCard.className = "card h-100";
+          productCard.style.width = "18rem";
+          productCard.innerHTML = `
+                    <img src="${productoSeleccionado.image}" class="card-img-top" alt="${productoSeleccionado.nombre}">
+                    <div class="card-body">
+                        <h5 class="card-title">${productoSeleccionado.nombre}</h5>
+                        <p class="card-text">Categoría: ${productoSeleccionado.categoria}</p>
+                        <p class="card-text">${productoSeleccionado.descripcion}</p>
+                        <a href="./products.html" class="d-flex justify-content-center">
+                        <button class="btn btn-primary mr-1 agregar-carrito-btn">COMPRAR</button>
+                        </a>
+                    </div>
+                `;
+          productDetail.appendChild(productCard);
+        }
+      });
+    </script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const cartCountElement = document.getElementById("cart-count");
@@ -119,85 +204,6 @@
         } else {
           cartCountElement.style.display = "none";
         }
-
-        const products = [
-          {
-            id: 1,
-            nombre: "Teclado Mecánico RGB",
-            categoria: "Periféricos",
-            CategoriaId: 1,
-            image:
-              "https://www.hd-tecnologia.com/imagenes/articulos/2020/10/CORSAIR-presenta-un-nuevo-teclado-mecanico-para-juegos-el-CORSAIR-K60-RGB-PRO.jpg",
-          },
-          {
-            id: 2,
-            nombre: "Mouse Gaming Inalámbrico",
-            categoria: "Periféricos",
-            CategoriaId: 1,
-            image:
-              "https://www.malditohard.com.ar/wp-content/uploads/product/8/MOU061.webp",
-          },
-          {
-            id: 3,
-            nombre: "Monitor Gaming 27'' 144Hz",
-            categoria: "Monitores",
-            CategoriaId: 2,
-            image:
-              "https://www.qloud.ar/SITES/IMG/gaming-point-06-2021/221_06-03-2023-03-03-55-2.png",
-          },
-          {
-            id: 4,
-            nombre: "Tarjeta Gráfica RTX 3080",
-            categoria: "Componentes",
-            CategoriaId: 3,
-            image:
-              "https://www.ozeros.com/wp-content/uploads/2020/10/MSI-GEFORCE-RTX-3080-GAMING-X-TRIO-10G-1.jpg",
-          },
-          {
-            id: 5,
-            nombre: "Auriculares Gaming con Micrófono",
-            categoria: "Periféricos",
-            CategoriaId: 1,
-            image:
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5vm5t80tSqb_Bw5YdcZvEGtwi8jBYiT4P7w&s",
-          },
-          {
-            id: 6,
-            nombre: "Silla Gaming Ergonómica",
-            categoria: "Mobiliario",
-            CategoriaId: 4,
-            image:
-              "https://img.freepik.com/fotos-premium/silla-gaming-ergonomica-colores-vibrantes-00478-01_883586-53770.jpg?w=826",
-          },
-        ];
-
-        // Obtener las categorías únicas
-        const categoriasUnicas = [
-          ...new Set(products.map((product) => product.categoria)),
-        ];
-
-        // Elemento contenedor
-        const categoriasContainer = document.getElementById("categorias");
-
-        // Crear y agregar cada card de categoría
-        categoriasUnicas.forEach((categoria) => {
-          const categoriaCard = document.createElement("div");
-          categoriaCard.className = "card text-white bg-dark mb-3";
-          categoriaCard.style.width = "18rem";
-
-          // Primer producto dummy
-          const product = products.find((p) => p.categoria === categoria);
-
-          categoriaCard.innerHTML = `
-                    <img src="${product.image}" class="card-img-top" alt="${categoria}">
-                    <div class="card-body">
-                        <h5 class="card-title">${categoria}</h5>
-                        <p class="card-text">Explora nuestros productos de ${categoria}.</p>
-                        <a href="./listacategoria.html?categoria=${categoria}" class="btn btn-light">Ver más</a>
-                    </div>
-                `;
-          categoriasContainer.appendChild(categoriaCard);
-        });
       });
     </script>
     <script

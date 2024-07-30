@@ -1,7 +1,7 @@
-import { getGamingProducts } from '../Mock.js';
+import { getGamingProducts } from './mock.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    const products = getGamingProducts(); 
+    const products = getGamingProducts();
     const productList = document.getElementById('product-list');
     const categorySelect = document.getElementById('category-select');
 
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    
+
     displayProducts(products);
 
     //evento click
